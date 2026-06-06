@@ -10,7 +10,7 @@
 				alt="<?php bloginfo( 'name' ); ?>"
 				class="hero__logo"
 			>
-			<p class="hero__eyebrow"><?php esc_html_e( 'Vintage, Antique &amp; Curios', 'chique-vintique' ); ?></p>
+			<p class="hero__eyebrow"><?php esc_html_e( 'Vintage, Antiques &amp; Curios', 'chique-vintique' ); ?></p>
 			<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
 				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 					<a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn btn-primary">
