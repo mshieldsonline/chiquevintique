@@ -137,16 +137,14 @@ hr {
 
 /* Logo sizing */
 .cv-logo {
-  height: 110px;
+  height: 195px;
   width: auto;
   transition: height 0.35s ease;
 }
 
-/* Homepage: start large */
-.home .cv-logo { height: 195px; }
-.home .site-header__inner { padding-block: 0; }
+.site-header__inner { padding-block: 0; }
 
-/* After scroll: smaller but still visible */
+/* After scroll: shrink on all pages */
 .site-header.scrolled .cv-logo { height: 110px; }
 .site-header.scrolled .site-header__inner { padding-block: 0.25rem; }
 
