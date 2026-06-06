@@ -3,8 +3,8 @@ body {
 	font-family: 'Lato', system-ui, sans-serif;
 	font-size: 1rem;
 	line-height: 1.7;
-	color: #3a3530;
-	background: #faf7f2;
+	color: #2a2420;
+	background: #f5f0e8;
 	max-width: 720px;
 	margin: 0 auto;
 	padding: 2rem;
@@ -12,15 +12,15 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Playfair Display', Georgia, serif;
-	color: #6b4f3a;
+	color: #3d3b3b;
 }
 
-a { color: #6b4f3a; }
+a { color: #3d3b3b; }
 blockquote {
-	border-left: 3px solid #d4a5a0;
+	border-left: 3px solid #c4935a;
 	padding: 1rem 1.5rem;
-	background: #f2e8e0;
+	background: #e8e4e0;
 	font-family: 'Playfair Display', serif;
 	font-style: italic;
-	color: #6b4f3a;
+	color: #3d3b3b;
 }

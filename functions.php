@@ -186,13 +186,12 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'cv_woo_cart_count' );
    ===================================================== */
 function cv_block_editor_settings() {
 	add_theme_support( 'editor-color-palette', [
-		[ 'name' => __( 'Cream', 'chique-vintique' ),       'slug' => 'cream',       'color' => '#faf7f2' ],
-		[ 'name' => __( 'Blush', 'chique-vintique' ),       'slug' => 'blush',       'color' => '#f2e8e0' ],
-		[ 'name' => __( 'Dusty Rose', 'chique-vintique' ),  'slug' => 'dusty-rose',  'color' => '#d4a5a0' ],
-		[ 'name' => __( 'Sage', 'chique-vintique' ),        'slug' => 'sage',        'color' => '#9aab8c' ],
-		[ 'name' => __( 'Warm Brown', 'chique-vintique' ),  'slug' => 'warm-brown',  'color' => '#6b4f3a' ],
-		[ 'name' => __( 'Charcoal', 'chique-vintique' ),    'slug' => 'charcoal',    'color' => '#3a3530' ],
-		[ 'name' => __( 'Gold', 'chique-vintique' ),        'slug' => 'gold',        'color' => '#c9a96e' ],
+		[ 'name' => __( 'Cream', 'chique-vintique' ),       'slug' => 'cream',       'color' => '#f5f0e8' ],
+		[ 'name' => __( 'Light Grey', 'chique-vintique' ),  'slug' => 'light-grey',  'color' => '#e8e4e0' ],
+		[ 'name' => __( 'Mid Grey', 'chique-vintique' ),    'slug' => 'mid-grey',    'color' => '#9a9696' ],
+		[ 'name' => __( 'Dark Grey', 'chique-vintique' ),   'slug' => 'dark-grey',   'color' => '#3d3b3b' ],
+		[ 'name' => __( 'Charcoal', 'chique-vintique' ),    'slug' => 'charcoal',    'color' => '#2a2420' ],
+		[ 'name' => __( 'Gold', 'chique-vintique' ),        'slug' => 'gold',        'color' => '#c4935a' ],
 		[ 'name' => __( 'White', 'chique-vintique' ),       'slug' => 'white',       'color' => '#ffffff' ],
 	] );
 }

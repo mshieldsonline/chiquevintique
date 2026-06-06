@@ -17,13 +17,13 @@ Tags: e-commerce, blog, gutenberg, woocommerce, vintage
    DESIGN TOKENS
    ===================================================== */
 :root {
-  --cv-cream:       #faf7f2;
-  --cv-blush:       #f2e8e0;
-  --cv-dusty-rose:  #d4a5a0;
-  --cv-sage:        #9aab8c;
-  --cv-warm-brown:  #6b4f3a;
-  --cv-charcoal:    #3a3530;
-  --cv-gold:        #c9a96e;
+  --cv-cream:       #f5f0e8;
+  --cv-blush:       #e8e4e0;
+  --cv-dusty-rose:  #c4935a;
+  --cv-sage:        #9a9696;
+  --cv-warm-brown:  #3d3b3b;
+  --cv-charcoal:    #2a2420;
+  --cv-gold:        #c4935a;
   --cv-white:       #ffffff;
 
   --cv-font-serif:  'Playfair Display', Georgia, serif;
