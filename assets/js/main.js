@@ -1,21 +1,27 @@
 ( function () {
 	'use strict';
 
-	// Shrink header on scroll — hysteresis prevents threshold jitter
+	// Shrink header on scroll — header is position:fixed so no reflow loop
 	const header = document.getElementById( 'masthead' );
 	if ( header ) {
-		const SHRINK_AT  = 80;
-		const RESTORE_AT = 30;
+		const syncBodyPadding = function () {
+			document.body.style.paddingTop = header.offsetHeight + 'px';
+		};
+
 		const onScroll = function () {
-			if ( window.scrollY > SHRINK_AT ) {
+			if ( window.scrollY > 80 ) {
 				header.classList.add( 'scrolled' );
-			} else if ( window.scrollY < RESTORE_AT ) {
+			} else {
 				header.classList.remove( 'scrolled' );
 			}
-			// between 30–80: do nothing, hold current state
+			syncBodyPadding();
 		};
+
+		// Keep body padding in sync as CSS transition runs
+		header.addEventListener( 'transitionend', syncBodyPadding );
 		window.addEventListener( 'scroll', onScroll, { passive: true } );
-		onScroll();
+		window.addEventListener( 'resize', syncBodyPadding, { passive: true } );
+		syncBodyPadding(); // set on load
 	}
 
 	// Mobile nav toggle

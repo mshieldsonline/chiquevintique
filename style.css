@@ -118,8 +118,10 @@ hr {
 .site-header {
   background: var(--cv-warm-brown);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   box-shadow: var(--cv-shadow);
 }
@@ -751,3 +753,5 @@ hr {
    ===================================================== */
 .admin-bar .site-header { top: 32px; }
 @media (max-width: 782px) { .admin-bar .site-header { top: 46px; } }
+
+/* WP admin bar pushes fixed header down — JS syncBodyPadding handles the rest */
