@@ -270,6 +270,44 @@ hr {
   overflow: hidden;
 }
 
+/* Hero with background image */
+.hero--bg {
+  background-image: url('assets/hero-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+/* Dark overlay so text stays readable */
+.hero--bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 25, 20, 0.55);
+  z-index: 1;
+}
+
+.hero__logo {
+  width: clamp(180px, 30vw, 320px);
+  height: auto;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+}
+
+/* On bg hero, eyebrow and buttons go white */
+.hero--bg .hero__eyebrow { color: rgba(255,255,255,0.8); }
+.hero--bg .btn-primary {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.hero--bg .btn-primary:hover {
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
 .hero::before {
   content: '';
   position: absolute;

@@ -3,18 +3,21 @@
 <main id="main" class="site-main">
 
 	<!-- ======= HERO ======= -->
-	<section class="hero">
-		<div class="cv-container" style="position:relative;z-index:1;">
+	<section class="hero hero--bg">
+		<div class="cv-container" style="position:relative;z-index:2;">
+			<img
+				src="<?php echo esc_url( CV_URI . '/assets/logo-white.png' ); ?>"
+				alt="<?php bloginfo( 'name' ); ?>"
+				class="hero__logo"
+			>
 			<p class="hero__eyebrow"><?php esc_html_e( 'Vintage, Antique &amp; Curios', 'chique-vintique' ); ?></p>
-			<h1 class="hero__title"><?php bloginfo( 'name' ); ?></h1>
-			<p class="hero__subtitle"><?php bloginfo( 'description' ); ?></p>
-			<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+			<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
 				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 					<a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn btn-primary">
 						<?php esc_html_e( 'Shop the Collection', 'chique-vintique' ); ?>
 					</a>
 				<?php endif; ?>
-				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="btn btn-outline">
+				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="btn btn-outline" style="color:#fff;border-color:#fff;">
 					<?php esc_html_e( 'Our Story', 'chique-vintique' ); ?>
 				</a>
 			</div>
