@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-define( 'CV_VERSION', '2.1.0' );
+define( 'CV_VERSION', '2.1.1' );
 define( 'CV_DIR', get_template_directory() );
 define( 'CV_URI', get_template_directory_uri() );
 
