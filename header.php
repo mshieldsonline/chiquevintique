@@ -21,12 +21,7 @@
 				<?php if ( has_custom_logo() ) : ?>
 					<?php the_custom_logo(); ?>
 				<?php else : ?>
-					<div>
-						<div class="site-title"><?php bloginfo( 'name' ); ?></div>
-						<?php $tagline = get_bloginfo( 'description' ); if ( $tagline ) : ?>
-							<div class="site-tagline"><?php echo esc_html( $tagline ); ?></div>
-						<?php endif; ?>
-					</div>
+					<img src="<?php echo esc_url( CV_URI . '/assets/logo.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" height="60" style="height:60px;width:auto;">
 				<?php endif; ?>
 			</a>
 

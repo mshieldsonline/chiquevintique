@@ -5,7 +5,7 @@
 
 			<!-- Brand column -->
 			<div class="site-footer__brand">
-				<div class="site-title"><?php bloginfo( 'name' ); ?></div>
+				<img src="<?php echo esc_url( CV_URI . '/assets/logo-white.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" height="70" style="height:70px;width:auto;margin-bottom:.75rem;">
 				<p><?php bloginfo( 'description' ); ?></p>
 			</div>
 
