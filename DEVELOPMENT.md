@@ -148,6 +148,7 @@ Branch: `main`
 - [ ] Set up WP navigation menus (currently using fallback links)
 - [ ] Update WordPress site tagline in **Settings → General** to "Vintage, Antiques & Curios"
 - [ ] Set a static front page: **Settings → Reading → Static page**
+- [ ] Update PHP to 8.2 on live server ✅ Done
 
 ### Medium priority
 - [ ] Build About / Our Story page
@@ -158,8 +159,8 @@ Branch: `main`
 
 ### Before going live
 - [ ] Update logo file with correct tagline ("Vintage, Antiques & Curios")
-- [ ] Install WP Pusher on live host and connect to GitHub repo
-- [ ] Use All-in-One WP Migration for initial launch (local → live)
+- [x] Install WP Pusher on live host and connect to GitHub repo
+- [x] Use All-in-One WP Migration for initial launch (local → live)
 - [ ] Set up payment gateway in WooCommerce (Stripe or PayPal)
 - [ ] Configure shipping options
 - [ ] SSL certificate on live host
