@@ -173,7 +173,7 @@ hr {
 /* Primary nav */
 .primary-nav { display: flex; align-items: center; gap: 0.25rem; list-style: none; padding: 0; margin: 0; }
 .primary-nav a {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
