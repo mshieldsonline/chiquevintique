@@ -1,0 +1,26 @@
+/* Gutenberg editor styles — matches front-end typography */
+body {
+	font-family: 'Lato', system-ui, sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: #3a3530;
+	background: #faf7f2;
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Playfair Display', Georgia, serif;
+	color: #6b4f3a;
+}
+
+a { color: #6b4f3a; }
+blockquote {
+	border-left: 3px solid #d4a5a0;
+	padding: 1rem 1.5rem;
+	background: #f2e8e0;
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+	color: #6b4f3a;
+}
