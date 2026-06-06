@@ -137,15 +137,20 @@ hr {
 
 /* Logo sizing */
 .cv-logo {
-  height: 195px;
+  height: 120px;
   width: auto;
   transition: height 0.35s ease;
 }
 
-.site-header__inner { padding-block: 0; }
+.site-header__inner { padding-block: 0.25rem; }
+.site-header__inner { transition: padding-block 0.35s ease; }
+
+/* Homepage: larger pre-scroll */
+.home .cv-logo { height: 195px; }
+.home .site-header__inner { padding-block: 0; }
 
 /* After scroll: shrink on all pages */
-.site-header.scrolled .cv-logo { height: 110px; }
+.site-header.scrolled .cv-logo { height: 80px; }
 .site-header.scrolled .site-header__inner { padding-block: 0.25rem; }
 
 .site-branding { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
