@@ -21,7 +21,7 @@
 				<?php if ( has_custom_logo() ) : ?>
 					<?php the_custom_logo(); ?>
 				<?php else : ?>
-					<img src="<?php echo esc_url( CV_URI . '/assets/logo-white.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" style="height:140px;width:auto;display:block;">
+					<img src="<?php echo esc_url( CV_URI . '/assets/logo-white.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="cv-logo" style="display:block;">
 				<?php endif; ?>
 			</a>
 

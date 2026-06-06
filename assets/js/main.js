@@ -1,6 +1,20 @@
 ( function () {
 	'use strict';
 
+	// Shrink header on scroll
+	const header = document.getElementById( 'masthead' );
+	if ( header ) {
+		const onScroll = function () {
+			if ( window.scrollY > 60 ) {
+				header.classList.add( 'scrolled' );
+			} else {
+				header.classList.remove( 'scrolled' );
+			}
+		};
+		window.addEventListener( 'scroll', onScroll, { passive: true } );
+		onScroll(); // run once on load in case page is already scrolled
+	}
+
 	// Mobile nav toggle
 	const toggle = document.querySelector( '.nav-toggle' );
 	const nav    = document.querySelector( '.primary-nav' );

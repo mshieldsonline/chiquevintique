@@ -130,7 +130,23 @@ hr {
   justify-content: space-between;
   gap: 1rem;
   padding-block: 0.5rem;
+  transition: padding-block 0.35s ease;
 }
+
+/* Logo sizing */
+.cv-logo {
+  height: 80px;
+  width: auto;
+  transition: height 0.35s ease;
+}
+
+/* Homepage: start large */
+.home .cv-logo { height: 160px; }
+.home .site-header__inner { padding-block: 0; }
+
+/* After scroll: shrink back down */
+.site-header.scrolled .cv-logo { height: 80px; }
+.site-header.scrolled .site-header__inner { padding-block: 0.5rem; }
 
 .site-branding { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
 .site-branding:hover { color: inherit; }
@@ -155,13 +171,13 @@ hr {
 /* Primary nav */
 .primary-nav { display: flex; align-items: center; gap: 0.25rem; list-style: none; padding: 0; margin: 0; }
 .primary-nav a {
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
   color: rgba(255,255,255,0.85);
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 1rem;
   border-radius: var(--cv-radius);
   transition: color 0.2s, background 0.2s;
 }
