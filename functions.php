@@ -59,6 +59,16 @@ add_action( 'after_setup_theme', 'cv_content_width', 0 );
 /* =====================================================
    ENQUEUE SCRIPTS & STYLES
    ===================================================== */
+function cv_inline_logo_css() {
+	$css = '
+		.cv-logo { height: 120px !important; width: auto; transition: height 0.35s ease; }
+		.home .cv-logo { height: 195px !important; }
+		.site-header.scrolled .cv-logo { height: 80px !important; }
+	';
+	wp_add_inline_style( 'cv-style', $css );
+}
+add_action( 'wp_enqueue_scripts', 'cv_inline_logo_css', 20 );
+
 function cv_enqueue() {
 	// Google Fonts
 	wp_enqueue_style(
