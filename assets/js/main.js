@@ -1,18 +1,21 @@
 ( function () {
 	'use strict';
 
-	// Shrink header on scroll
+	// Shrink header on scroll — hysteresis prevents threshold jitter
 	const header = document.getElementById( 'masthead' );
 	if ( header ) {
+		const SHRINK_AT  = 80;
+		const RESTORE_AT = 30;
 		const onScroll = function () {
-			if ( window.scrollY > 60 ) {
+			if ( window.scrollY > SHRINK_AT ) {
 				header.classList.add( 'scrolled' );
-			} else {
+			} else if ( window.scrollY < RESTORE_AT ) {
 				header.classList.remove( 'scrolled' );
 			}
+			// between 30–80: do nothing, hold current state
 		};
 		window.addEventListener( 'scroll', onScroll, { passive: true } );
-		onScroll(); // run once on load in case page is already scrolled
+		onScroll();
 	}
 
 	// Mobile nav toggle
