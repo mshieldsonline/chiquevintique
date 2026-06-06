@@ -5,7 +5,7 @@
 	<!-- ======= HERO ======= -->
 	<section class="hero">
 		<div class="cv-container" style="position:relative;z-index:1;">
-			<p class="hero__eyebrow"><?php esc_html_e( 'Curated Vintage &amp; Antiques', 'chique-vintique' ); ?></p>
+			<p class="hero__eyebrow"><?php esc_html_e( 'Vintage, Antique &amp; Curios', 'chique-vintique' ); ?></p>
 			<h1 class="hero__title"><?php bloginfo( 'name' ); ?></h1>
 			<p class="hero__subtitle"><?php bloginfo( 'description' ); ?></p>
 			<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
