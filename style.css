@@ -181,7 +181,11 @@ hr {
   color: rgba(255,255,255,0.85);
   padding: 0.6rem 1rem;
   border-radius: var(--cv-radius);
-  transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s, font-size 0.35s ease;
+}
+
+.site-header.scrolled .primary-nav a {
+  font-size: 0.95rem;
 }
 .primary-nav a:hover,
 .primary-nav .current-menu-item > a {
