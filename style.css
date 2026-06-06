@@ -143,7 +143,7 @@ hr {
 }
 
 /* Homepage: start large */
-.home .cv-logo { height: 260px; }
+.home .cv-logo { height: 195px; }
 .home .site-header__inner { padding-block: 0; }
 
 /* After scroll: smaller but still visible */
