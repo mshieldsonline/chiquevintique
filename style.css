@@ -804,4 +804,188 @@ hr {
 .admin-bar .site-header { top: 32px; }
 @media (max-width: 782px) { .admin-bar .site-header { top: 46px; } }
 
+/* =====================================================
+   PAGE HERO (inner pages: Contact, About, etc.)
+   ===================================================== */
+.cv-page-hero {
+  background: var(--cv-charcoal);
+  color: var(--cv-white);
+  text-align: center;
+  padding: 5rem 1.5rem 3.5rem;
+}
+.cv-page-hero__eyebrow {
+  font-family: var(--cv-font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cv-sage);
+  margin-bottom: 0.75rem;
+}
+.cv-page-hero__title {
+  font-family: var(--cv-font-serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--cv-white);
+}
+.cv-page-hero__subtitle {
+  font-family: var(--cv-font-sans);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin: 0 auto;
+  opacity: 0.8;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   CONTACT PAGE LAYOUT
+   ===================================================== */
+.cv-contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .cv-contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* Contact Form */
+.cv-contact-form__heading,
+.cv-contact-info__heading {
+  font-family: var(--cv-font-serif);
+  font-size: 1.6rem;
+  color: var(--cv-warm-brown);
+  margin-bottom: 1.75rem;
+}
+
+/* Plain HTML form (fallback before CF7 is installed) */
+.cv-plain-form .cv-form-row {
+  margin-bottom: 1.25rem;
+}
+.cv-plain-form label {
+  display: block;
+  font-family: var(--cv-font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cv-warm-brown);
+  margin-bottom: 0.4rem;
+}
+.cv-plain-form input[type="text"],
+.cv-plain-form input[type="email"],
+.cv-plain-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--cv-blush);
+  border-radius: var(--cv-radius);
+  background: var(--cv-cream);
+  font-family: var(--cv-font-sans);
+  font-size: 1rem;
+  color: var(--cv-charcoal);
+  transition: border-color 0.2s ease;
+}
+.cv-plain-form input:focus,
+.cv-plain-form textarea:focus {
+  outline: none;
+  border-color: var(--cv-dusty-rose);
+}
+.cv-plain-form textarea { resize: vertical; }
+.cv-form-note {
+  font-size: 0.85rem;
+  color: var(--cv-dusty-rose);
+  font-style: italic;
+}
+
+/* Contact Form 7 overrides — match our style */
+.wpcf7-form .wpcf7-form-control-wrap { display: block; margin-bottom: 1.25rem; }
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--cv-blush);
+  border-radius: var(--cv-radius);
+  background: var(--cv-cream);
+  font-family: var(--cv-font-sans);
+  font-size: 1rem;
+  color: var(--cv-charcoal);
+  transition: border-color 0.2s ease;
+}
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus {
+  outline: none;
+  border-color: var(--cv-dusty-rose);
+}
+.wpcf7-form textarea { resize: vertical; }
+.wpcf7-form input[type="submit"] {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background: var(--cv-charcoal);
+  color: var(--cv-white);
+  font-family: var(--cv-font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--cv-radius);
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.wpcf7-form input[type="submit"]:hover { background: var(--cv-warm-brown); }
+
+/* Contact Info panel */
+.cv-contact-info__block {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--cv-blush);
+}
+.cv-contact-info__block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.cv-contact-info__block h3 {
+  font-family: var(--cv-font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cv-dusty-rose);
+  margin-bottom: 0.5rem;
+}
+.cv-contact-info__block p,
+.cv-contact-info__block a {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cv-charcoal);
+}
+.cv-contact-info__block a:hover { color: var(--cv-dusty-rose); }
+
+/* Social links */
+.cv-social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+.cv-social-link {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--cv-blush);
+  border-radius: 999px;
+  font-family: var(--cv-font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cv-warm-brown);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.cv-social-link:hover {
+  background: var(--cv-charcoal);
+  border-color: var(--cv-charcoal);
+  color: var(--cv-white);
+}
+
 /* WP admin bar pushes fixed header down — JS syncBodyPadding handles the rest */
