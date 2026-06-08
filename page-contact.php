@@ -69,14 +69,6 @@ get_header(); ?>
 					</div>
 
 					<div class="cv-contact-info__block">
-						<h3><?php esc_html_e( 'Opening Hours', 'chique-vintique' ); ?></h3>
-						<p>
-							<?php esc_html_e( 'Online shop open 24/7', 'chique-vintique' ); ?><br>
-							<?php esc_html_e( 'We aim to respond to enquiries within 1–2 working days.', 'chique-vintique' ); ?>
-						</p>
-					</div>
-
-					<div class="cv-contact-info__block">
 						<h3><?php esc_html_e( 'Follow Along', 'chique-vintique' ); ?></h3>
 						<p><?php esc_html_e( 'We share new finds and behind-the-scenes on Instagram and Facebook.', 'chique-vintique' ); ?></p>
 						<div class="cv-social-links">
