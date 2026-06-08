@@ -29,7 +29,7 @@ get_header(); ?>
 					<?php
 					// If Contact Form 7 is active, output the shortcode
 					if ( function_exists( 'wpcf7' ) || class_exists( 'WPCF7' ) ) {
-						echo do_shortcode( '[contact-form-7 id="contact-form" title="Contact form 1"]' );
+						echo do_shortcode( '[contact-form-7 id="f1ba732" title="Contact form 1"]' );
 					} else {
 						// Fallback plain HTML form until CF7 is installed
 						?>
