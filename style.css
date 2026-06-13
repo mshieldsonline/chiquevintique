@@ -910,6 +910,7 @@ hr {
 .woocommerce div.product div.images {
   grid-column: 2;
   grid-row: 1 / 3;
+  align-self: start;
   margin-bottom: 0;
   background: var(--cv-blush);
   border-radius: var(--cv-radius-lg);
