@@ -889,10 +889,17 @@ hr {
    WOOCOMMERCE — SINGLE PRODUCT PAGE
    ===================================================== */
 .single-product .site-main { background: var(--cv-white); }
-.single-product .woocommerce {
+
+/* Centre the single product content with breathing room either side */
+.single-product .woocommerce,
+.woocommerce-page.single-product .woocommerce {
   max-width: var(--cv-max-width);
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .woocommerce div.product {
@@ -952,9 +959,8 @@ hr {
   display: block;
 }
 .woocommerce-product-gallery {
-  background: var(--cv-blush);
   border-radius: var(--cv-radius-lg);
-  padding: 1.25rem;
+  overflow: hidden;
 }
 .woocommerce div.product div.images .thumbnails { margin-top: 1rem; display: flex; gap: 0.5rem; }
 .woocommerce div.product div.images .thumbnails img {
