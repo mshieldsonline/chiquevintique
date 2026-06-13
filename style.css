@@ -901,15 +901,19 @@ hr {
   .woocommerce div.product { grid-template-columns: 1fr; gap: 2rem; }
 }
 
+/* Swap columns: summary left, images right */
+.woocommerce div.product div.images { order: 2; margin-bottom: 0; }
+.woocommerce div.product div.summary { order: 1; }
+
 /* Image gallery */
-.woocommerce div.product div.images { margin-bottom: 0; }
 .woocommerce div.product div.images img {
   border-radius: var(--cv-radius-lg);
   width: 100%;
   height: auto;
   display: block;
 }
-.woocommerce div.product div.images .flex-viewport { border-radius: var(--cv-radius-lg); overflow: hidden; }
+.woocommerce div.product div.images .flex-viewport { border-radius: var(--cv-radius-lg); overflow: hidden; padding: 1rem; background: var(--cv-blush); }
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper { padding: 0.5rem; }
 .woocommerce div.product div.images .thumbnails { margin-top: 1rem; display: flex; gap: 0.5rem; }
 .woocommerce div.product div.images .thumbnails img {
   border-radius: var(--cv-radius);
