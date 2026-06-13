@@ -890,17 +890,6 @@ hr {
    ===================================================== */
 .single-product .site-main { background: var(--cv-white); }
 
-/* Centre the single product content with breathing room either side */
-.single-product .woocommerce,
-.woocommerce-page.single-product .woocommerce {
-  max-width: var(--cv-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  box-sizing: border-box;
-  width: 100%;
-}
 
 .woocommerce div.product {
   display: grid;
