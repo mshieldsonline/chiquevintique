@@ -962,11 +962,14 @@ hr {
   border-radius: var(--cv-radius);
   overflow: hidden;
 }
+.woocommerce-product-gallery .woocommerce-product-gallery__image {
+  margin: 4px !important;
+}
 /* Thumbnail strip — gaps between thumbs */
 .woocommerce-product-gallery .flex-control-thumbs {
   display: flex !important;
-  gap: 4px;
-  margin: 4px 0 0 !important;
+  gap: 8px;
+  margin: 8px 0 0 !important;
   padding: 0 !important;
   list-style: none;
 }
