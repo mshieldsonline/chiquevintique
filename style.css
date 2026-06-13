@@ -891,19 +891,52 @@ hr {
 .single-product .site-main { background: var(--cv-white); }
 
 .woocommerce div.product {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
   padding: 3rem 0 4rem;
 }
-@media (max-width: 768px) {
-  .woocommerce div.product { grid-template-columns: 1fr; gap: 2rem; }
+
+/* Summary: left column */
+.woocommerce div.product div.summary {
+  order: 1;
+  flex: 0 0 48%;
+  width: 48%;
+  padding-right: 3rem;
+  box-sizing: border-box;
 }
 
-/* Swap columns: summary left, images right */
-.woocommerce div.product div.images { order: 2; margin-bottom: 0; }
-.woocommerce div.product div.summary { order: 1; }
+/* Images: right column */
+.woocommerce div.product div.images {
+  order: 2;
+  flex: 0 0 52%;
+  width: 52%;
+  margin-bottom: 0;
+}
+
+/* Tabs and related: full width below */
+.woocommerce div.product .woocommerce-tabs {
+  order: 3;
+  flex: 0 0 100%;
+  width: 100%;
+}
+.woocommerce div.product .related.products,
+.woocommerce div.product .upsells.products {
+  order: 4;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .woocommerce div.product div.summary,
+  .woocommerce div.product div.images {
+    flex: 0 0 100%;
+    width: 100%;
+    padding-right: 0;
+  }
+  .woocommerce div.product div.summary { order: 1; }
+  .woocommerce div.product div.images { order: 2; }
+}
 
 /* Image gallery */
 .woocommerce div.product div.images img {
@@ -912,8 +945,11 @@ hr {
   height: auto;
   display: block;
 }
-.woocommerce div.product div.images .flex-viewport { border-radius: var(--cv-radius-lg); overflow: hidden; padding: 1rem; background: var(--cv-blush); }
-.woocommerce div.product div.images .woocommerce-product-gallery__wrapper { padding: 0.5rem; }
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+  padding: 0.75rem;
+  background: var(--cv-blush);
+  border-radius: var(--cv-radius-lg);
+}
 .woocommerce div.product div.images .thumbnails { margin-top: 1rem; display: flex; gap: 0.5rem; }
 .woocommerce div.product div.images .thumbnails img {
   border-radius: var(--cv-radius);
@@ -1003,7 +1039,6 @@ hr {
 
 /* Tabs (Description / Reviews) */
 .woocommerce div.product .woocommerce-tabs {
-  grid-column: 1 / -1;
   margin-top: 1rem;
   padding-top: 3rem;
   border-top: 1px solid var(--cv-blush);
@@ -1058,7 +1093,6 @@ hr {
 /* Related products */
 .woocommerce .related.products,
 .woocommerce .upsells.products {
-  grid-column: 1 / -1;
   margin-top: 3rem;
   padding-top: 3rem;
   border-top: 1px solid var(--cv-blush);
