@@ -893,9 +893,9 @@ hr {
 
 .woocommerce div.product {
   display: grid;
-  grid-template-columns: 40% 1fr;
+  grid-template-columns: 35% 1fr;
   grid-template-rows: auto auto auto;
-  column-gap: 3rem;
+  column-gap: 2rem;
   padding: 3rem 0 4rem;
 }
 
