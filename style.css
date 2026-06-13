@@ -929,9 +929,9 @@ hr {
 .woocommerce div.product .woocommerce-tabs {
   grid-column: 1;
   grid-row: 2;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--cv-blush);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 /* Full width row 3: related products */
@@ -1013,12 +1013,14 @@ hr {
   margin-bottom: 0.5rem;
 }
 
-/* Collapse empty price/rating space when not set */
+/* Collapse empty price/rating/form space when not set */
 .woocommerce div.product .woocommerce-product-rating:empty,
-.woocommerce div.product p.price:empty { display: none; }
+.woocommerce div.product p.price:empty,
+.woocommerce div.product form.cart:empty { display: none; }
 .woocommerce div.product .woocommerce-product-rating { margin-bottom: 0.5rem; }
 .woocommerce div.product p.price,
 .woocommerce div.product span.price { margin-bottom: 0.75rem; }
+.woocommerce div.product div.summary > * { margin-bottom: 0.5rem; }
 
 .woocommerce div.product .woocommerce-product-rating {
   display: flex;
