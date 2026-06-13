@@ -1006,12 +1006,19 @@ hr {
 /* Product summary column */
 .woocommerce div.product div.summary { padding: 0; }
 
-/* Product title — smaller so it doesn't wrap excessively */
+/* Product title */
 .woocommerce div.product .product_title {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   line-height: 1.2;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
+
+/* Collapse empty price/rating space when not set */
+.woocommerce div.product .woocommerce-product-rating:empty,
+.woocommerce div.product p.price:empty { display: none; }
+.woocommerce div.product .woocommerce-product-rating { margin-bottom: 0.5rem; }
+.woocommerce div.product p.price,
+.woocommerce div.product span.price { margin-bottom: 0.75rem; }
 
 .woocommerce div.product .woocommerce-product-rating {
   display: flex;
@@ -1072,18 +1079,8 @@ hr {
   font-size: 0.9rem;
 }
 
-/* Product meta (SKU, categories) */
-.woocommerce div.product .product_meta {
-  font-family: var(--cv-font-sans);
-  font-size: 0.82rem;
-  color: var(--cv-sage);
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--cv-blush);
-  line-height: 2;
-}
-.woocommerce div.product .product_meta a { color: var(--cv-dusty-rose); text-decoration: none; }
-.woocommerce div.product .product_meta a:hover { color: var(--cv-charcoal); }
+/* Hide category/tag meta */
+.woocommerce div.product .product_meta { display: none; }
 
 /* Tabs (Description / Reviews) */
 /* Hide tabs nav — description content always visible, reviews hidden */
