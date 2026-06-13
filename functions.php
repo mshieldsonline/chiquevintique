@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-define( 'CV_VERSION', '2.2.6' );
+define( 'CV_VERSION', '2.2.7' );
 define( 'CV_DIR', get_template_directory() );
 define( 'CV_URI', get_template_directory_uri() );
 
@@ -206,6 +206,14 @@ function cv_block_editor_settings() {
 	] );
 }
 add_action( 'after_setup_theme', 'cv_block_editor_settings' );
+
+/* =====================================================
+   WOOCOMMERCE — DISABLE REVIEWS
+   ===================================================== */
+add_filter( 'woocommerce_product_tabs', function( $tabs ) {
+	unset( $tabs['reviews'] );
+	return $tabs;
+} );
 
 /* =====================================================
    INCLUDE PARTIALS

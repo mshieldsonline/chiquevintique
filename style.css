@@ -942,7 +942,7 @@ hr {
 
 /* Image gallery */
 .woocommerce div.product div.images img {
-  border-radius: var(--cv-radius-lg);
+  border-radius: 0;
   width: 100%;
   height: auto;
   display: block;
@@ -950,6 +950,31 @@ hr {
 .woocommerce-product-gallery {
   border-radius: var(--cv-radius-lg);
   overflow: hidden;
+  background: var(--cv-cream);
+}
+/* Gaps between mosaic images */
+.woocommerce-product-gallery .woocommerce-product-gallery__wrapper {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 5px;
+  background: var(--cv-cream);
+}
+.woocommerce-product-gallery .woocommerce-product-gallery__image {
+  margin: 0 !important;
+}
+/* Thumbnail strip gaps */
+.woocommerce-product-gallery .flex-control-thumbs {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.woocommerce-product-gallery .flex-control-thumbs li {
+  float: none !important;
+  width: auto !important;
+  flex: 1;
+  margin: 0 !important;
 }
 .woocommerce div.product div.images .thumbnails { margin-top: 1rem; display: flex; gap: 0.5rem; }
 .woocommerce div.product div.images .thumbnails img {
@@ -965,6 +990,13 @@ hr {
 
 /* Product summary column */
 .woocommerce div.product div.summary { padding: 0; }
+
+/* Product title — smaller so it doesn't wrap excessively */
+.woocommerce div.product .product_title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
 
 .woocommerce div.product .woocommerce-product-rating {
   display: flex;
@@ -1039,9 +1071,10 @@ hr {
 .woocommerce div.product .product_meta a:hover { color: var(--cv-charcoal); }
 
 /* Tabs (Description / Reviews) */
-.woocommerce div.product .woocommerce-tabs {
-  margin-top: 0;
-}
+/* Hide tabs nav — description content always visible, reviews hidden */
+.woocommerce div.product .woocommerce-tabs ul.tabs { display: none !important; }
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel { display: block !important; padding: 0; background: none; border: none; box-shadow: none; }
+.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--reviews { display: none !important; }
 .woocommerce div.product .woocommerce-tabs ul.tabs {
   padding: 0;
   margin: 0 0 2rem;
