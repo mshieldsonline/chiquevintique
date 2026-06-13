@@ -929,10 +929,14 @@ hr {
 .woocommerce div.product .woocommerce-tabs {
   grid-column: 1;
   grid-row: 2;
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
 }
+
+/* Hide WooCommerce clearing divs that create phantom grid rows */
+.woocommerce div.product > .clear { display: none !important; }
 
 /* Full width row 3: related products */
 .woocommerce div.product .related.products,
