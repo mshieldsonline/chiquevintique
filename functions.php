@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-define( 'CV_VERSION', '2.3.8' );
+define( 'CV_VERSION', '2.3.9' );
 define( 'CV_DIR', get_template_directory() );
 define( 'CV_URI', get_template_directory_uri() );
 
@@ -213,6 +213,17 @@ add_action( 'after_setup_theme', 'cv_block_editor_settings' );
 add_filter( 'woocommerce_product_tabs', function( $tabs ) {
 	unset( $tabs['reviews'] );
 	return $tabs;
+} );
+
+/* =====================================================
+   WOOCOMMERCE — HIDE PRICE/CART WHEN NO PRICE SET
+   ===================================================== */
+add_action( 'woocommerce_before_single_product_summary', function() {
+	global $product;
+	if ( $product && ! $product->get_price() ) {
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	}
 } );
 
 /* =====================================================
