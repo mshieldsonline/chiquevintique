@@ -893,7 +893,7 @@ hr {
 
 .woocommerce div.product {
   display: grid;
-  grid-template-columns: 48% 52%;
+  grid-template-columns: 40% 1fr;
   grid-template-rows: auto auto auto;
   column-gap: 3rem;
   padding: 3rem 0 4rem;
@@ -911,6 +911,9 @@ hr {
   grid-column: 2;
   grid-row: 1 / 3;
   margin-bottom: 0;
+  background: var(--cv-blush);
+  border-radius: var(--cv-radius-lg);
+  padding: 1.5rem;
 }
 
 /* Left column, row 2: description/reviews tabs */
@@ -947,12 +950,8 @@ hr {
   display: block;
 }
 .woocommerce-product-gallery {
-  border-radius: var(--cv-radius-lg);
+  border-radius: var(--cv-radius);
   overflow: hidden;
-}
-/* Main image */
-.woocommerce-product-gallery .flex-viewport img {
-  border-radius: var(--cv-radius-lg) var(--cv-radius-lg) 0 0;
 }
 /* Thumbnail strip — gaps between thumbs */
 .woocommerce-product-gallery .flex-control-thumbs {
