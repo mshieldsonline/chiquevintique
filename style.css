@@ -1004,7 +1004,7 @@ hr {
 .woocommerce div.product div.images .thumbnails img:hover { opacity: 1; }
 
 /* Product summary column */
-.woocommerce div.product div.summary { padding: 0; }
+.woocommerce div.product div.summary { padding: 0; margin-bottom: 0 !important; }
 
 /* Product title */
 .woocommerce div.product .product_title {
