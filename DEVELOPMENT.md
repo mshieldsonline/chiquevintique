@@ -157,6 +157,9 @@ Branch: `main`
 - [ ] Test and style WooCommerce product single page
 - [ ] Test cart and checkout pages
 
+### Hosting & infrastructure
+- [ ] Set up automatic WordPress backups on live site (e.g. UpdraftPlus to Google Drive / Dropbox)
+
 ### Before going live
 - [ ] Update logo file with correct tagline ("Vintage, Antiques & Curios")
 - [x] Install WP Pusher on live host and connect to GitHub repo
