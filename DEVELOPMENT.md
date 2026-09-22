@@ -13,7 +13,8 @@ If starting a new Claude Code session, paste this file in at the start and say:
 **Local dev:** LocalWP → `C:\Users\mshie\Local Sites\chiquevintique\app\public\`  
 **Theme folder:** `wp-content/themes/chique-vintique/`  
 **GitHub repo:** https://github.com/mshieldsonline/chiquevintique.git  
-**Deployment pipeline:** LocalWP → git push → GitHub → WP Pusher → live site (not yet configured)  
+**Live site:** https://chiquevintique.co.uk (behind a "Coming soon" banner)  
+**Deployment pipeline:** LocalWP → git push → GitHub → WP Pusher → live site  
 **Brand assets:** `C:\Users\mshie\OneDrive\Documents\Chique Vintique\Website\Images\`
 
 ---
@@ -23,10 +24,12 @@ If starting a new Claude Code session, paste this file in at the start and say:
 - WordPress (LocalWP, latest)
 - Custom theme — Gutenberg heavy, no Elementor
 - WooCommerce (installed, setup wizard completed, no products yet)
-- Contact Form 7 (not yet installed)
+- WooCommerce Stripe Payment Gateway (connected — see To Do List)
+- Contact Form 7 (installed; form `f1ba732` rendered by `page-contact.php`)
 - Git for Windows (installed)
-- WP Pusher (not yet installed on live host)
-- Hosting: to be confirmed (same Guru Reseller cPanel as Brand Mark)
+- WP Pusher (installed on live host, connected to GitHub)
+- All-in-One WP Migration (used for the initial local → live move)
+- Hosting: Guru Reseller cPanel, same as Brand Mark
 
 ---
 
@@ -119,7 +122,7 @@ chique-vintique/
 ## Known Issues / Notes
 
 - CSS cache on LocalWP can be stubborn — logo sizing uses `wp_add_inline_style()` with `!important` to bypass file cache
-- Current theme version: `2.1.2` — bump `CV_VERSION` in `functions.php` when making CSS changes
+- Current theme version: `2.4.3` — bump `CV_VERSION` in `functions.php` when making CSS changes, or browsers serve the cached stylesheet
 - Hero background image path uses relative URL in CSS (`url('assets/hero-bg.jpeg')`) — may need to be updated to absolute URL if issues arise on live site
 - The `.home` body class controls homepage-specific header size
 
@@ -128,12 +131,30 @@ chique-vintique/
 ## Git Workflow
 
 ```bash
-# Make changes in theme folder, then:
-git add .
+# Make changes in the theme folder, then:
+git remote -v                       # confirm you are in the RIGHT repo
+git status                          # check which files actually changed
+git add style.css functions.php     # stage files BY NAME, never "git add ."
 git commit -m "Description of change"
 git push
-# WP Pusher (once installed on live site) picks this up automatically
+# WP Pusher picks this up automatically
 ```
+
+**Stage files by name.** On 2026-09-21 a commit meant for this theme was
+made in the unrelated LaneInsights repo, which auto-deploys to Azure, while
+the actual theme changes sat uncommitted and were nearly lost. Several
+projects are often open at once, so always confirm the remote before
+committing, and stop if a commit message doesn't match the staged diff.
+
+**This repo must stay public.** The free WP Pusher tier only deploys from
+public repositories. Because it is public, never commit secrets — Stripe
+keys and database credentials live in the WP admin and `wp-config.php`,
+both outside this folder.
+
+**Continuous integration:** `.github/workflows/lint.yml` runs `php -l` over
+every PHP file on each push, so a syntax error shows as a red tick in the
+Actions tab. It is a warning only — WP Pusher deploys on GitHub's webhook,
+which fires regardless of whether the job passes.
 
 All commits pushed to: https://github.com/mshieldsonline/chiquevintique.git  
 Branch: `main`
@@ -143,30 +164,32 @@ Branch: `main`
 ## To Do List
 
 ### High priority
-- [ ] Install Contact Form 7 and build Contact page
-- [ ] Add products to WooCommerce shop
-- [ ] Set up WP navigation menus (currently using fallback links)
+- [ ] **Run a Stripe test order** — card `4242 4242 4242 4242`, any future expiry, any 3-digit CVC. The payment path has never been tested end to end; one order exercises the shipping zone, checkout, Stripe and the order emails together.
+- [ ] Add products to WooCommerce shop (still empty — nothing to sell or test with)
+- [x] Install Contact Form 7 and build Contact page (form `f1ba732`; test that it actually sends on the live host)
 - [ ] Update WordPress site tagline in **Settings → General** to "Vintage, Antiques & Curios"
 - [ ] Set a static front page: **Settings → Reading → Static page**
-- [ ] Update PHP to 8.2 on live server ✅ Done
+- [x] Set up WP navigation menus — Primary (Home, Shop, Blog, Contact) and Footer (Contact, Shop)
+- [x] Update PHP to 8.2 on live server
 
 ### Medium priority
 - [ ] Build About / Our Story page
 - [ ] Tidy Blog page layout
 - [ ] Flesh out footer content (widgets or hardcoded links)
-- [ ] Test and style WooCommerce product single page
-- [ ] Test cart and checkout pages
+- [x] Test and style WooCommerce product single page
+- [x] Style cart and checkout pages (block-based — see Session 2)
 
 ### Hosting & infrastructure
 - [ ] Set up automatic WordPress backups on live site (e.g. UpdraftPlus to Google Drive / Dropbox)
 
 ### Before going live
 - [ ] Update logo file with correct tagline ("Vintage, Antiques & Curios")
+- [ ] Verify SSL certificate on live host (Stripe connected without complaint, so likely present — confirm)
 - [x] Install WP Pusher on live host and connect to GitHub repo
 - [x] Use All-in-One WP Migration for initial launch (local → live)
-- [ ] Set up payment gateway in WooCommerce (Stripe or PayPal)
-- [ ] Configure shipping options
-- [ ] SSL certificate on live host
+- [x] Set up payment gateway — WooCommerce Stripe plugin, account `acct_1UI5hdDKQMPD1aLr`
+- [x] Configure shipping — UK-only zone, £4.99 flat rate. Rest of World has no method, so non-UK checkout is blocked by design.
+- [ ] Turn off the "Coming soon" banner (**WooCommerce → Settings → Site visibility**)
 
 ### Nice to have
 - [ ] Add more product photos to hero rotation or gallery section
@@ -192,3 +215,40 @@ Branch: `main`
 - Added dark overlay and frosted panel behind logo for contrast
 - Fixed logo jitter (reflow loop) by switching to `position: fixed`
 - Updated tagline throughout to "Vintage, Antiques & Curios"
+
+### Session 2 — 2026-06-08 ✅ Complete
+- Added contact page template and inner page hero styles
+- Installed Contact Form 7 and wired the shortcode to form `f1ba732`
+- Removed opening hours from the contact page
+
+### Session 3 — 2026-06-13 ✅ Complete
+- Restyled shop, single product, cart and checkout pages
+- Long iteration on the single product layout, settling on: summary floated
+  left at 36%, gallery right at 60%, description tabs clearing beneath
+- Grid was tried first and abandoned — WooCommerce's own float rules and
+  clear divs fight it, so the theme works *with* the floats instead
+- Removed the description/reviews tabs, hid category meta, closed the
+  persistent gap between title and description
+- Hid empty price/add-to-cart elements via PHP when a product has no price
+
+### Session 4 — 2026-09-21 ✅ Complete
+- Connected Stripe via the WooCommerce Stripe plugin (payment, payout,
+  webhook and sync all enabled)
+- Set up shipping: UK-only zone at £4.99 flat. Rest of World deliberately
+  has no method, which blocks non-UK checkout
+- Created both navigation menus and assigned them to their theme locations
+- Styled the block-based basket and checkout (form inputs, cart items,
+  quantity stepper, totals, order summary panel, notices)
+
+### Session 5 — 2026-09-22 ✅ Complete
+- Rewrote the first three "Why Chique Vintique" cards. The old copy was
+  pitched at heirloom antiques and read as generic filler; the shop sells
+  quirky retro items, so the voice is now short, plain and first-person
+- The third card changed job entirely — it used to labour the "one of a
+  kind" point that the first card already implies, and now tells people
+  stock turns over, giving them a reason to come back
+- Added `.github/workflows/lint.yml` (PHP syntax check on every push)
+- Corrected this file, which had drifted badly out of date: WP Pusher and
+  the hosting were still listed as unconfigured, Contact Form 7 as not
+  installed, the theme version as 2.1.2, and menus/payment/shipping as
+  outstanding when all three were done
