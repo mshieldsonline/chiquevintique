@@ -102,9 +102,9 @@
 			<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;text-align:center;">
 				<?php
 				$pillars = [
-					[ 'icon' => '✦', 'title' => __( 'Carefully Sourced', 'chique-vintique' ),     'body' => __( 'Each item is hand-picked for quality, character, and charm.', 'chique-vintique' ) ],
-					[ 'icon' => '✦', 'title' => __( 'Sustainably Yours', 'chique-vintique' ),      'body' => __( 'Buying vintage gives beautiful things a second life.', 'chique-vintique' ) ],
-					[ 'icon' => '✦', 'title' => __( 'Authentic & Unique', 'chique-vintique' ),     'body' => __( 'No two pieces are the same — own something truly one of a kind.', 'chique-vintique' ) ],
+					[ 'icon' => '✦', 'title' => __( 'Picked by Hand', 'chique-vintique' ),        'body' => __( 'We buy what we\'d happily keep ourselves.', 'chique-vintique' ) ],
+					[ 'icon' => '✦', 'title' => __( 'Second Time Around', 'chique-vintique' ),    'body' => __( 'Old things, still going strong.', 'chique-vintique' ) ],
+					[ 'icon' => '✦', 'title' => __( 'We\'re Always Hunting', 'chique-vintique' ),  'body' => __( 'New finds most weeks. Worth a second look.', 'chique-vintique' ) ],
 					[ 'icon' => '✦', 'title' => __( 'Secure Shopping', 'chique-vintique' ),        'body' => __( 'Safe checkout and easy returns, always.', 'chique-vintique' ) ],
 				];
 				foreach ( $pillars as $p ) : ?>
